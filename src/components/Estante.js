@@ -4,7 +4,9 @@ import Livros from './Livros'
 import {Link} from 'react-router-dom'
 
 
+
 export default class  Estante extends Component {
+        
     render() {
         return(
             
@@ -21,7 +23,9 @@ export default class  Estante extends Component {
                     <div className="bookshelf">
                         <h2 className="bookshelf-title">Currently Reading</h2>
                         <div className="bookshelf-books">
-                        <Livros />
+                        <Livros 
+                             
+                            />
                         </div>
                     </div>
 

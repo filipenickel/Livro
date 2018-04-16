@@ -1,24 +1,32 @@
-import React from 'react'
-//import * as BooksAPI from './BooksAPI'
+import React,{Component} from 'react'
+import * as BooksAPI from './BooksAPI'
 import './App.css'
+import { BrowserRouter,Switch, Route } from "react-router-dom";
+import Estante from './components/Estante'
+import Busca from './components/Busca'
 
 
-import Router from './components/Router'
-class BooksApp extends React.Component {
+class BooksApp extends Component {
   state = {
-    
-  }
+    books:[]
+}
 
-  
+componentDidMount(){
+BooksAPI.getAll().then((books)=>{
+    this.setState({books})
+})
+}
 
   render() {
     return (
 
       
-      <div className="app">
- 
-        <Router />
-      </div>
+      <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Estante} />
+            <Route path="/busca" component={Busca} />
+          </Switch>
+      </BrowserRouter>
     
   );
 }
