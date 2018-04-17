@@ -1,13 +1,17 @@
 import React,{Component} from 'react'
 import '../App.css'
-import Livros from './Livros'
+import Livro from './Livro'
 import {Link} from 'react-router-dom'
 
 
 
 export default class  Estante extends Component {
-        
-    render() {
+    state = {
+        books:[]
+    }
+    render()
+     {
+        console.log(this.props.books)
         return(
             
             <div>
@@ -23,23 +27,21 @@ export default class  Estante extends Component {
                     <div className="bookshelf">
                         <h2 className="bookshelf-title">Currently Reading</h2>
                         <div className="bookshelf-books">
-                        <Livros 
-                             
-                            />
+                        <Livro  />
                         </div>
                     </div>
 
                     <div className="bookshelf">
                         <h2 className="bookshelf-title">Want to Read</h2>
                         <div className="bookshelf-books">
-                        <Livros />
+                        <Livro />
                         </div>
                     </div>
 
                     <div className="bookshelf">
                         <h2 className="bookshelf-title">Read</h2>
                         <div className="bookshelf-books">
-                        <Livros />
+                        <Livro />
                         </div>
                     </div>
 

@@ -23,7 +23,7 @@ BooksAPI.getAll().then((books)=>{
       
       <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={Estante} />
+            <Route exact path="/" render={() => <Estante books={this.state.books} />}  />
             <Route path="/busca" component={Busca} />
           </Switch>
       </BrowserRouter>
