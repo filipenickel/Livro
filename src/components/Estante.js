@@ -7,11 +7,13 @@ import {Link} from 'react-router-dom'
 
 export default class  Estante extends Component {
     state = {
-        books:[]
+        books:[],
+        shelf:[],
     }
     render()
      {
         console.log(this.props.books)
+        
         return(
             
             <div>
@@ -27,21 +29,47 @@ export default class  Estante extends Component {
                     <div className="bookshelf">
                         <h2 className="bookshelf-title">Currently Reading</h2>
                         <div className="bookshelf-books">
-                        <Livro  />
+                        <ol className="books-grid">
+                            {this.props.books.filter(book => book.shelf ==='currentlyReading').map(book =>
+                                <div key={book.id}>
+                                <Livro book={book} />
+                                </div>
+                            )}
+                       
+
+                                        </ol>
                         </div>
+
+
                     </div>
 
                     <div className="bookshelf">
                         <h2 className="bookshelf-title">Want to Read</h2>
                         <div className="bookshelf-books">
-                        <Livro />
+                        <ol className="books-grid">
+                        
+                        {this.props.books.filter(book => book.shelf ==='wantToRead').map(book =>
+                                <div key={book.id}>
+                                <Livro book={book} />
+                                </div>
+                            )}
+
+                                        </ol>
                         </div>
                     </div>
 
                     <div className="bookshelf">
                         <h2 className="bookshelf-title">Read</h2>
                         <div className="bookshelf-books">
-                        <Livro />
+                        <ol className="books-grid">
+                        
+                        {this.props.books.filter(book => book.shelf ==='read').map(book =>
+                                <div key={book.id}>
+                                <Livro book={book} />
+                                </div>
+                            )}
+
+                                        </ol>
                         </div>
                     </div>
 
