@@ -8,14 +8,25 @@ import Busca from './components/Busca'
 
 class BooksApp extends Component {
   state = {
-    books:[]
+    books:[],
 }
 
-componentDidMount(){
-BooksAPI.getAll().then((books)=>{
-    this.setState({books})
-})
-}
+    moveBook = (book, shelf) => {
+      if (this.state.books) {
+        BooksAPI.update(book,shelf).then(() => {
+          book.shelf = shelf;
+          this.setState(state => ({
+            books: state.books.filter(b => b.id !== book.id).concat([ book ])
+          }))
+        })
+      }
+    }
+
+    componentDidMount(){
+    BooksAPI.getAll().then((books)=>{
+        this.setState({books})
+    })
+    }
 
   render() {
     return (
@@ -23,8 +34,12 @@ BooksAPI.getAll().then((books)=>{
       
       <BrowserRouter>
           <Switch>
-            <Route exact path="/" render={() => <Estante books={this.state.books} />}  />
-            <Route path="/busca" component={Busca} />
+            <Route exact path="/" render={() => <Estante 
+              MoveBook={this.moveBook}
+              books={this.state.books} />}  />
+
+            <Route path="/busca" render={() => <Busca 
+              MoveBook={this.moveBook}  />} />
           </Switch>
       </BrowserRouter>
     

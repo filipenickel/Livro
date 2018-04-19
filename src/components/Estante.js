@@ -10,9 +10,12 @@ export default class  Estante extends Component {
         books:[],
         shelf:[],
     }
+
+
+
     render()
      {
-        console.log(this.props.books)
+        
         
         return(
             
@@ -32,7 +35,8 @@ export default class  Estante extends Component {
                         <ol className="books-grid">
                             {this.props.books.filter(book => book.shelf ==='currentlyReading').map(book =>
                                 <div key={book.id}>
-                                <Livro book={book} />
+                                <Livro book={book}
+                                    MoveBook={this.props.MoveBook} />
                                 </div>
                             )}
                        
@@ -50,7 +54,9 @@ export default class  Estante extends Component {
                         
                         {this.props.books.filter(book => book.shelf ==='wantToRead').map(book =>
                                 <div key={book.id}>
-                                <Livro book={book} />
+                                <Livro book={book}
+                                MoveBook={this.props.MoveBook}
+                                 />
                                 </div>
                             )}
 
@@ -65,7 +71,8 @@ export default class  Estante extends Component {
                         
                         {this.props.books.filter(book => book.shelf ==='read').map(book =>
                                 <div key={book.id}>
-                                <Livro book={book} />
+                                <Livro book={book} 
+                                    MoveBook={this.props.MoveBook} />
                                 </div>
                             )}
 
