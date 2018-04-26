@@ -5,7 +5,7 @@ Este projeto é uma estante de livro aonde consumimos uma API de books.
 
 
 
-## TL;DR
+## Inicializando Projeto
 
 Para começar a desenvolver imediatamente:
 
