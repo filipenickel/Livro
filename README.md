@@ -1,8 +1,9 @@
 # Projeto MyReads
 
-Este é o modelo inicial para o projeto de avaliação final do curso Fundamentos de Reação da Udacity. O objetivo desse modelo é economizar tempo fornecendo um exemplo estático da marcação CSS e HTML que pode ser usada, mas sem o código React necessário para concluir o projeto. Se você optar por começar com esse modelo, seu trabalho será adicionar interatividade ao aplicativo refatorando o código estático nesse modelo.
+Este projeto de avaliação final do curso Fundamentos de React da Udacity.
+Este projeto é uma estante de livro aonde consumimos uma API de books.
 
-Claro, você é livre para iniciar este projeto do zero, se desejar! Apenas certifique-se de usar o [Create React App] (https://github.com/facebookincubator/create-react-app) para inicializar o projeto.
+
 
 ## TL;DR
 
